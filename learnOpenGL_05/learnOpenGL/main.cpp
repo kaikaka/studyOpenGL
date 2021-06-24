@@ -7,10 +7,14 @@
 #include "GLGeometryTransform.h"
 #include "GLFrustum.h"
 #include <math.h>
+#include "GLBatch.h"
+#include "StopWatch.h"
 
 GLShaderManager shaderManager;
 GLGeometryTransform transformPipeline;
 GLBatch floorBatch;
+GLTriangleBatch torusBatch;
+
 GLMatrixStack modelViewMatrix;
 GLMatrixStack projectionMatrix;
 GLFrustum viewFrustem;
@@ -48,14 +52,26 @@ void SpecialKeys(int key, int x, int y) {
 void RenderScene(void) {
     
     static GLfloat vFloorColor[] = {0.0f,1.0f,0.0,1.0};
+    static GLfloat vTrousColor[] = {1.0f,0.0f,0.0,1.0};
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-//    modelViewMatrix.PushMatrix(objectFrame);
+    //基于时间的动画
+    static CStopWatch rotimer;
+    float yRot = rotimer.GetElapsedSeconds() * 60.0;
+    
+    modelViewMatrix.PushMatrix(objectFrame);
     
     shaderManager.UseStockShader(GLT_SHADER_FLAT,transformPipeline.GetModelViewProjectionMatrix(),vFloorColor);
     floorBatch.Draw();
     
-//    modelViewMatrix.PopMatrix();
+    //光源
+    M3DVector4f vlightPos = {0.0,10.0,5.0,1.0f};
+    modelViewMatrix.Translate(0.0, 0.0, -3.0);
+    modelViewMatrix.PushMatrix();
+    modelViewMatrix.Rotate(yRot, 0.0, 1.0, 0.0);
+    shaderManager.UseStockShader(GLT_SHADER_POINT_LIGHT_DIFF,transformPipeline.GetModelViewMatrix(),transformPipeline.GetProjectionMatrix(),vlightPos,vTrousColor);
+    torusBatch.Draw();
+    modelViewMatrix.PopMatrix();
     //交换缓冲区
     glutSwapBuffers();
 //    glutPostRedisplay();
@@ -68,6 +84,7 @@ void SetupRC() {
     shaderManager.InitializeStockShaders();
     glEnable(GL_DEPTH_TEST);
     
+    objectFrame.MoveForward(6.0);
     //先绘制地板
     floorBatch.Begin(GL_LINES, 300);
     for (GLfloat x = -20.0; x <= 20.0f; x += 0.5) {
@@ -79,6 +96,7 @@ void SetupRC() {
     }
     floorBatch.End();
     
+    gltMakeSphere(torusBatch, 0.4f, 40, 80);
 }
 
 int main(int argc,char* argv[])
