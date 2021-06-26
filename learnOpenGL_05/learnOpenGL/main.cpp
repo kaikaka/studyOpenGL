@@ -37,19 +37,22 @@ void ChangeSize(int w, int h) {
 }
 
 void SpecialKeys(int key, int x, int y) {
-    GLfloat stepSize = 0.025f;
+    float linear = 0.1f;
+    float angular = float(m3dDegToRad(5.0f));
+    
     if (key == GLUT_KEY_UP) {
-        
+        cameraFrame.MoveForward(linear);
     }
     if (key == GLUT_KEY_DOWN) {
+        cameraFrame.MoveForward(-linear);
     }
     if (key == GLUT_KEY_LEFT) {
+        cameraFrame.RotateWorld(angular, 0.0, 1.0, 0.0f);
     }
     if (key == GLUT_KEY_RIGHT) {
+        cameraFrame.RotateWorld(-angular, 0.0, 1.0, 0.0f);
     }
     
-    
-    glutPostRedisplay();
 }
 
 
@@ -61,13 +64,11 @@ void RenderScene(void) {
     
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    
-    
     //基于时间的动画
     static CStopWatch rotimer;
     float yRot = rotimer.GetElapsedSeconds() * 60.0;
     
-    M3DVector4f mCamera;
+    M3DMatrix44f mCamera;
     cameraFrame.GetCameraMatrix(mCamera);
     modelViewMatrix.PushMatrix(mCamera);
     
