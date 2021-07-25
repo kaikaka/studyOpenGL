@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F2CDF22269F22E100DB24BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CDF21269F22E100DB24BA /* AppDelegate.swift */; };
+		7F2CDF24269F22E100DB24BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CDF23269F22E100DB24BA /* SceneDelegate.swift */; };
+		7F2CDF26269F22E100DB24BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CDF25269F22E100DB24BA /* ViewController.swift */; };
+		7F2CDF29269F22E100DB24BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2CDF27269F22E100DB24BA /* Main.storyboard */; };
+		7F2CDF2B269F22E400DB24BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2CDF2A269F22E400DB24BA /* Assets.xcassets */; };
+		7F2CDF2E269F22E400DB24BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2CDF2C269F22E400DB24BA /* LaunchScreen.storyboard */; };
+		7F2CDF39269F22E500DB24BA /* OpenGLESImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CDF38269F22E500DB24BA /* OpenGLESImageTests.swift */; };
+		7F2CDF44269F22E500DB24BA /* OpenGLESImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CDF43269F22E500DB24BA /* OpenGLESImageUITests.swift */; };
+		7F2CDF54269F310400DB24BA /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F2CDF53269F310400DB24BA /* dog.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F2CDF35269F22E500DB24BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F2CDF16269F22E100DB24BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F2CDF1D269F22E100DB24BA;
+			remoteInfo = OpenGLESImage;
+		};
+		7F2CDF40269F22E500DB24BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F2CDF16269F22E100DB24BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F2CDF1D269F22E100DB24BA;
+			remoteInfo = OpenGLESImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F2CDF1E269F22E100DB24BA /* OpenGLESImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLESImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2CDF21269F22E100DB24BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7F2CDF23269F22E100DB24BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7F2CDF25269F22E100DB24BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7F2CDF28269F22E100DB24BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F2CDF2A269F22E400DB24BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F2CDF2D269F22E400DB24BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F2CDF2F269F22E400DB24BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F2CDF34269F22E500DB24BA /* OpenGLESImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGLESImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2CDF38269F22E500DB24BA /* OpenGLESImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGLESImageTests.swift; sourceTree = "<group>"; };
+		7F2CDF3A269F22E500DB24BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F2CDF3F269F22E500DB24BA /* OpenGLESImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGLESImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2CDF43269F22E500DB24BA /* OpenGLESImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGLESImageUITests.swift; sourceTree = "<group>"; };
+		7F2CDF45269F22E500DB24BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F2CDF53269F310400DB24BA /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F2CDF1B269F22E100DB24BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2CDF31269F22E500DB24BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2CDF3C269F22E500DB24BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F2CDF15269F22E100DB24BA = {
+			isa = PBXGroup;
+			children = (
+				7F2CDF20269F22E100DB24BA /* OpenGLESImage */,
+				7F2CDF37269F22E500DB24BA /* OpenGLESImageTests */,
+				7F2CDF42269F22E500DB24BA /* OpenGLESImageUITests */,
+				7F2CDF1F269F22E100DB24BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F2CDF1F269F22E100DB24BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F2CDF1E269F22E100DB24BA /* OpenGLESImage.app */,
+				7F2CDF34269F22E500DB24BA /* OpenGLESImageTests.xctest */,
+				7F2CDF3F269F22E500DB24BA /* OpenGLESImageUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F2CDF20269F22E100DB24BA /* OpenGLESImage */ = {
+			isa = PBXGroup;
+			children = (
+				7F2CDF53269F310400DB24BA /* dog.jpg */,
+				7F2CDF21269F22E100DB24BA /* AppDelegate.swift */,
+				7F2CDF23269F22E100DB24BA /* SceneDelegate.swift */,
+				7F2CDF25269F22E100DB24BA /* ViewController.swift */,
+				7F2CDF27269F22E100DB24BA /* Main.storyboard */,
+				7F2CDF2A269F22E400DB24BA /* Assets.xcassets */,
+				7F2CDF2C269F22E400DB24BA /* LaunchScreen.storyboard */,
+				7F2CDF2F269F22E400DB24BA /* Info.plist */,
+			);
+			path = OpenGLESImage;
+			sourceTree = "<group>";
+		};
+		7F2CDF37269F22E500DB24BA /* OpenGLESImageTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F2CDF38269F22E500DB24BA /* OpenGLESImageTests.swift */,
+				7F2CDF3A269F22E500DB24BA /* Info.plist */,
+			);
+			path = OpenGLESImageTests;
+			sourceTree = "<group>";
+		};
+		7F2CDF42269F22E500DB24BA /* OpenGLESImageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F2CDF43269F22E500DB24BA /* OpenGLESImageUITests.swift */,
+				7F2CDF45269F22E500DB24BA /* Info.plist */,
+			);
+			path = OpenGLESImageUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F2CDF1D269F22E100DB24BA /* OpenGLESImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2CDF48269F22E500DB24BA /* Build configuration list for PBXNativeTarget "OpenGLESImage" */;
+			buildPhases = (
+				7F2CDF1A269F22E100DB24BA /* Sources */,
+				7F2CDF1B269F22E100DB24BA /* Frameworks */,
+				7F2CDF1C269F22E100DB24BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenGLESImage;
+			productName = OpenGLESImage;
+			productReference = 7F2CDF1E269F22E100DB24BA /* OpenGLESImage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F2CDF33269F22E500DB24BA /* OpenGLESImageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2CDF4B269F22E500DB24BA /* Build configuration list for PBXNativeTarget "OpenGLESImageTests" */;
+			buildPhases = (
+				7F2CDF30269F22E500DB24BA /* Sources */,
+				7F2CDF31269F22E500DB24BA /* Frameworks */,
+				7F2CDF32269F22E500DB24BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F2CDF36269F22E500DB24BA /* PBXTargetDependency */,
+			);
+			name = OpenGLESImageTests;
+			productName = OpenGLESImageTests;
+			productReference = 7F2CDF34269F22E500DB24BA /* OpenGLESImageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7F2CDF3E269F22E500DB24BA /* OpenGLESImageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2CDF4E269F22E500DB24BA /* Build configuration list for PBXNativeTarget "OpenGLESImageUITests" */;
+			buildPhases = (
+				7F2CDF3B269F22E500DB24BA /* Sources */,
+				7F2CDF3C269F22E500DB24BA /* Frameworks */,
+				7F2CDF3D269F22E500DB24BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F2CDF41269F22E500DB24BA /* PBXTargetDependency */,
+			);
+			name = OpenGLESImageUITests;
+			productName = OpenGLESImageUITests;
+			productReference = 7F2CDF3F269F22E500DB24BA /* OpenGLESImageUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F2CDF16269F22E100DB24BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					7F2CDF1D269F22E100DB24BA = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					7F2CDF33269F22E500DB24BA = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 7F2CDF1D269F22E100DB24BA;
+					};
+					7F2CDF3E269F22E500DB24BA = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 7F2CDF1D269F22E100DB24BA;
+					};
+				};
+			};
+			buildConfigurationList = 7F2CDF19269F22E100DB24BA /* Build configuration list for PBXProject "OpenGLESImage" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F2CDF15269F22E100DB24BA;
+			productRefGroup = 7F2CDF1F269F22E100DB24BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F2CDF1D269F22E100DB24BA /* OpenGLESImage */,
+				7F2CDF33269F22E500DB24BA /* OpenGLESImageTests */,
+				7F2CDF3E269F22E500DB24BA /* OpenGLESImageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F2CDF1C269F22E100DB24BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2CDF54269F310400DB24BA /* dog.jpg in Resources */,
+				7F2CDF2E269F22E400DB24BA /* LaunchScreen.storyboard in Resources */,
+				7F2CDF2B269F22E400DB24BA /* Assets.xcassets in Resources */,
+				7F2CDF29269F22E100DB24BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2CDF32269F22E500DB24BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2CDF3D269F22E500DB24BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F2CDF1A269F22E100DB24BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2CDF26269F22E100DB24BA /* ViewController.swift in Sources */,
+				7F2CDF22269F22E100DB24BA /* AppDelegate.swift in Sources */,
+				7F2CDF24269F22E100DB24BA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2CDF30269F22E500DB24BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2CDF39269F22E500DB24BA /* OpenGLESImageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2CDF3B269F22E500DB24BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2CDF44269F22E500DB24BA /* OpenGLESImageUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F2CDF36269F22E500DB24BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F2CDF1D269F22E100DB24BA /* OpenGLESImage */;
+			targetProxy = 7F2CDF35269F22E500DB24BA /* PBXContainerItemProxy */;
+		};
+		7F2CDF41269F22E500DB24BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F2CDF1D269F22E100DB24BA /* OpenGLESImage */;
+			targetProxy = 7F2CDF40269F22E500DB24BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7F2CDF27269F22E100DB24BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F2CDF28269F22E100DB24BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7F2CDF2C269F22E400DB24BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F2CDF2D269F22E400DB24BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F2CDF46269F22E500DB24BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F2CDF47269F22E500DB24BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F2CDF49269F22E500DB24BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OpenGLESImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoon.OpenGLESImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F2CDF4A269F22E500DB24BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OpenGLESImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoon.OpenGLESImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7F2CDF4C269F22E500DB24BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OpenGLESImageTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoon.OpenGLESImageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGLESImage.app/OpenGLESImage";
+			};
+			name = Debug;
+		};
+		7F2CDF4D269F22E500DB24BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OpenGLESImageTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoon.OpenGLESImageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGLESImage.app/OpenGLESImage";
+			};
+			name = Release;
+		};
+		7F2CDF4F269F22E500DB24BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OpenGLESImageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoon.OpenGLESImageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenGLESImage;
+			};
+			name = Debug;
+		};
+		7F2CDF50269F22E500DB24BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OpenGLESImageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoon.OpenGLESImageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenGLESImage;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F2CDF19269F22E100DB24BA /* Build configuration list for PBXProject "OpenGLESImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2CDF46269F22E500DB24BA /* Debug */,
+				7F2CDF47269F22E500DB24BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2CDF48269F22E500DB24BA /* Build configuration list for PBXNativeTarget "OpenGLESImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2CDF49269F22E500DB24BA /* Debug */,
+				7F2CDF4A269F22E500DB24BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2CDF4B269F22E500DB24BA /* Build configuration list for PBXNativeTarget "OpenGLESImageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2CDF4C269F22E500DB24BA /* Debug */,
+				7F2CDF4D269F22E500DB24BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2CDF4E269F22E500DB24BA /* Build configuration list for PBXNativeTarget "OpenGLESImageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2CDF4F269F22E500DB24BA /* Debug */,
+				7F2CDF50269F22E500DB24BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F2CDF16269F22E100DB24BA /* Project object */;
+}
