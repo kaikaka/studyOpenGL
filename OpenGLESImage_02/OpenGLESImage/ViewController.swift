@@ -10,15 +10,17 @@ import OpenGLES
 import UIKit
 
 struct GLVertex {
-    var postionCoord: GLKVector3!
-    var textureCoord: GLKVector2!
-    var normal: GLKVector3!
+    let postionCoord: GLKVector3!
+    let textureCoord: GLKVector2!
+    let normal: GLKVector3!
 }
 
 class ViewController: UIViewController, GLKViewDelegate {
     var baseEffect: GLKBaseEffect!
     var vertices: [GLVertex]! = []
     let kCoordCount: Int = 36
+    var vertexBuffer:GLuint = 0
+    
 
     func glkView(_ view: GLKView, drawIn rect: CGRect) {
     }
@@ -125,5 +127,81 @@ class ViewController: UIViewController, GLKViewDelegate {
         vertices[17] = GLVertex(postionCoord: GLKVector3(v: (-0.5, -0.5, -0.5)),
                                textureCoord: GLKVector2(v: (0, 0)),
                                normal: GLKVector3(v: (0, -1, 0)))
+        
+        // 左面
+        vertices[18] = GLVertex(postionCoord: GLKVector3(v: (-0.5, 0.5, 0.5)),
+                               textureCoord: GLKVector2(v: (1, 1)),
+                               normal: GLKVector3(v: (-1, 0, 0)))
+        vertices[19] = GLVertex(postionCoord: GLKVector3(v: (-0.5, -0.5, 0.5)),
+                               textureCoord: GLKVector2(v: (0, 1)),
+                               normal: GLKVector3(v: (-1, 0, 0)))
+        vertices[20] = GLVertex(postionCoord: GLKVector3(v: (-0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (1, 0)),
+                               normal: GLKVector3(v: (-1, 0, 0)))
+        vertices[21] = GLVertex(postionCoord: GLKVector3(v: (-0.5, -0.5, 0.5)),
+                               textureCoord: GLKVector2(v: (0, 1)),
+                               normal: GLKVector3(v: (-1, 0, 0)))
+        vertices[22] = GLVertex(postionCoord: GLKVector3(v: (-0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (1, 0)),
+                               normal: GLKVector3(v: (-1, 0, 0)))
+        vertices[23] = GLVertex(postionCoord: GLKVector3(v: (-0.5, -0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (0, 0)),
+                               normal: GLKVector3(v: (-1, 0, 0)))
+        
+        // 右面
+        vertices[24] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, 0.5)),
+                               textureCoord: GLKVector2(v: (1, 1)),
+                               normal: GLKVector3(v: (1, 0, 0)))
+        vertices[25] = GLVertex(postionCoord: GLKVector3(v: (0.5, -0.5, 0.5)),
+                               textureCoord: GLKVector2(v: (0, 1)),
+                               normal: GLKVector3(v: (1, 0, 0)))
+        vertices[26] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (1, 0)),
+                               normal: GLKVector3(v: (1, 0, 0)))
+        vertices[27] = GLVertex(postionCoord: GLKVector3(v: (0.5, -0.5, 0.5)),
+                               textureCoord: GLKVector2(v: (0, 1)),
+                               normal: GLKVector3(v: (1, 0, 0)))
+        vertices[28] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (1, 0)),
+                               normal: GLKVector3(v: (1, 0, 0)))
+        vertices[29] = GLVertex(postionCoord: GLKVector3(v: (0.5, -0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (0, 0)),
+                               normal: GLKVector3(v: (1, 0, 0)))
+        
+        // 后面
+        vertices[30] = GLVertex(postionCoord: GLKVector3(v: (-0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (0, 1)),
+                               normal: GLKVector3(v: (0, 0, -1)))
+        vertices[31] = GLVertex(postionCoord: GLKVector3(v: (0.5, -0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (0, 0)),
+                               normal: GLKVector3(v: (0, 0, -1)))
+        vertices[32] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (1, 0)),
+                               normal: GLKVector3(v: (0, 0, -1)))
+        vertices[33] = GLVertex(postionCoord: GLKVector3(v: (-0.5, -0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (0, 0)),
+                               normal: GLKVector3(v: (0, 0, -1)))
+        vertices[34] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (1, 1)),
+                               normal: GLKVector3(v: (0, 0, -1)))
+        vertices[35] = GLVertex(postionCoord: GLKVector3(v: (0.5, -0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (1, 0)),
+                               normal: GLKVector3(v: (0, 0, -1)))
+        glGenBuffers(1, &vertexBuffer)
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), vertexBuffer)
+        let bufferSizeBytes = size
+        glBufferData(GLenum(GL_ARRAY_BUFFER), bufferSizeBytes, vertices, GLenum(GL_STATIC_DRAW))
+        
+        glEnableVertexAttribArray(GLuint.init(GLKVertexAttrib.position.rawValue))
+        let n = MemoryLayout<GLVertex>.offset(of: \GLVertex.postionCoord)
+        glVertexAttribPointer(GLuint(GLKVertexAttrib.position.rawValue), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE),GLsizei(n!),nil)
+        
+        glEnableVertexAttribArray(GLuint.init(GLKVertexAttrib.texCoord0.rawValue))
+        let n1 = MemoryLayout<GLVertex>.offset(of: \GLVertex.textureCoord)
+        glVertexAttribPointer(GLuint.init(GLKVertexAttrib.texCoord0.rawValue), 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(n1!), nil)
+        
+        glEnableVertexAttribArray(GLuint.init(GLKVertexAttrib.normal.rawValue))
+        let n2 = MemoryLayout<GLVertex>.offset(of: \GLVertex.normal)
+        glVertexAttribPointer(GLuint.init(GLKVertexAttrib.normal.rawValue), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE),GLsizei(n2!),nil)
     }
 }
