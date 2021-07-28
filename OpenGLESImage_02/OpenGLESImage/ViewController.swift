@@ -17,12 +17,19 @@ struct GLVertex {
 
 class ViewController: UIViewController, GLKViewDelegate {
     var baseEffect: GLKBaseEffect!
-    var vertices: [GLVertex]! = []
+    var vertices: [GLVertex] = Array.init(repeating: GLVertex(postionCoord: GLKVector3(v: (0, 0, 0)),
+                                                              textureCoord: GLKVector2(v: (0, 0)),
+                                                              normal: GLKVector3(v: (0, 0, 0))), count: 36)
     let kCoordCount: Int = 36
     var vertexBuffer:GLuint = 0
+    var displayLink:CADisplayLink!
+    var angle:Int = 0
     
-
     func glkView(_ view: GLKView, drawIn rect: CGRect) {
+        glEnable(GLenum(GL_DEPTH_TEST))
+        glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
+        self.baseEffect.prepareToDraw()
+        glDrawArrays(GLenum(GL_TRIANGLES), 0, GLsizei(kCoordCount))
     }
 
     var glView: GLKView!
@@ -30,6 +37,8 @@ class ViewController: UIViewController, GLKViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
+        self.commonInit()
+//        self.addCADisplayLink()
     }
 
     func commonInit() {
@@ -50,10 +59,10 @@ class ViewController: UIViewController, GLKViewDelegate {
         view.addSubview(glView)
         // 获取纹理图片
         guard let path = Bundle.main.path(forResource: "dog", ofType: "jpg") else { return }
-
+        let image = UIImage.init(contentsOfFile: path)
         // 设置纹理参数
         let options = [GLKTextureLoaderOriginBottomLeft: NSNumber(value: true)]
-        guard let textureInfo = try? GLKTextureLoader.texture(withContentsOf: URL(string: path)!, options: options) else { return }
+        guard let textureInfo = try? GLKTextureLoader.texture(with: (image?.cgImage)!, options: options) else { return }
 
         // 使用baseEffect
         baseEffect = GLKBaseEffect()
@@ -63,7 +72,7 @@ class ViewController: UIViewController, GLKViewDelegate {
         // 开启光照效果
         baseEffect.light0.enabled = GLboolean(GL_TRUE)
         // 漫反射颜色
-        baseEffect.light0.diffuseColor = GLKVector4(v: (1, 1, 1, 1))
+        baseEffect.light0.diffuseColor = GLKVector4Make(1, 1, 1, 1)
         // 光源位置
         baseEffect.light0.position = GLKVector4Make(-0.5, -0.5, 5, 1)
         // 开启顶点数据空间
@@ -92,20 +101,20 @@ class ViewController: UIViewController, GLKViewDelegate {
         vertices[6] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, 0.5)),
                                textureCoord: GLKVector2(v: (1, 1)),
                                normal: GLKVector3(v: (0, 1, 0)))
-        vertices[7] = GLVertex(postionCoord: GLKVector3(v: (-0.5, -0.5, 0.5)),
-                               textureCoord: GLKVector2(v: (0, 0)),
+        vertices[7] = GLVertex(postionCoord: GLKVector3(v: (-0.5, 0.5, 0.5)),
+                               textureCoord: GLKVector2(v: (0, 1)),
                                normal: GLKVector3(v: (0, 1, 0)))
-        vertices[8] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, 0.5)),
-                               textureCoord: GLKVector2(v: (1, 1)),
-                               normal: GLKVector3(v: (0, 1, 0)))
-        vertices[9] = GLVertex(postionCoord: GLKVector3(v: (-0.5, -0.5, 0.5)),
-                               textureCoord: GLKVector2(v: (0, 0)),
-                               normal: GLKVector3(v: (0, 1, 0)))
-        vertices[10] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, 0.5)),
-                               textureCoord: GLKVector2(v: (1, 1)),
-                               normal: GLKVector3(v: (0, 1, 0)))
-        vertices[11] = GLVertex(postionCoord: GLKVector3(v: (0.5, -0.5, 0.5)),
+        vertices[8] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, -0.5)),
                                textureCoord: GLKVector2(v: (1, 0)),
+                               normal: GLKVector3(v: (0, 1, 0)))
+        vertices[9] = GLVertex(postionCoord: GLKVector3(v: (-0.5, 0.5, 0.5)),
+                               textureCoord: GLKVector2(v: (0, 1)),
+                               normal: GLKVector3(v: (0, 1, 0)))
+        vertices[10] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (1, 0)),
+                               normal: GLKVector3(v: (0, 1, 0)))
+        vertices[11] = GLVertex(postionCoord: GLKVector3(v: (-0.5, 0.5, -0.5)),
+                               textureCoord: GLKVector2(v: (0, 0)),
                                normal: GLKVector3(v: (0, 1, 0)))
         
         // 下面
@@ -172,7 +181,7 @@ class ViewController: UIViewController, GLKViewDelegate {
         vertices[30] = GLVertex(postionCoord: GLKVector3(v: (-0.5, 0.5, -0.5)),
                                textureCoord: GLKVector2(v: (0, 1)),
                                normal: GLKVector3(v: (0, 0, -1)))
-        vertices[31] = GLVertex(postionCoord: GLKVector3(v: (0.5, -0.5, -0.5)),
+        vertices[31] = GLVertex(postionCoord: GLKVector3(v: (-0.5, -0.5, -0.5)),
                                textureCoord: GLKVector2(v: (0, 0)),
                                normal: GLKVector3(v: (0, 0, -1)))
         vertices[32] = GLVertex(postionCoord: GLKVector3(v: (0.5, 0.5, -0.5)),
@@ -193,6 +202,7 @@ class ViewController: UIViewController, GLKViewDelegate {
         glBufferData(GLenum(GL_ARRAY_BUFFER), bufferSizeBytes, vertices, GLenum(GL_STATIC_DRAW))
         
         glEnableVertexAttribArray(GLuint.init(GLKVertexAttrib.position.rawValue))
+//        let n4 = MemoryLayout<GLVertex>.offset(of: \GLVertex.textureCoord)
         let n = MemoryLayout<GLVertex>.offset(of: \GLVertex.postionCoord)
         glVertexAttribPointer(GLuint(GLKVertexAttrib.position.rawValue), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE),GLsizei(n!),nil)
         
@@ -203,5 +213,16 @@ class ViewController: UIViewController, GLKViewDelegate {
         glEnableVertexAttribArray(GLuint.init(GLKVertexAttrib.normal.rawValue))
         let n2 = MemoryLayout<GLVertex>.offset(of: \GLVertex.normal)
         glVertexAttribPointer(GLuint.init(GLKVertexAttrib.normal.rawValue), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE),GLsizei(n2!),nil)
+    }
+    
+    func addCADisplayLink() {
+        self.displayLink = CADisplayLink.init(target: self, selector: #selector(onActionLink))
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
+    }
+    
+    @objc func onActionLink() {
+        self.angle = (self.angle + 5) % 360
+        self.baseEffect.transform.modelviewMatrix = GLKMatrix4MakeRotation(GLKMathDegreesToRadians(Float(self.angle)), 0.3, 1, 0.7)
+        self.glView.display()
     }
 }
