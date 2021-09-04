@@ -15,8 +15,6 @@
 		7F2CDF2E269F22E400DB24BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2CDF2C269F22E400DB24BA /* LaunchScreen.storyboard */; };
 		7F2CDF39269F22E500DB24BA /* OpenGLESImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CDF38269F22E500DB24BA /* OpenGLESImageTests.swift */; };
 		7F2CDF44269F22E500DB24BA /* OpenGLESImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CDF43269F22E500DB24BA /* OpenGLESImageUITests.swift */; };
-		7F2CDF54269F310400DB24BA /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F2CDF53269F310400DB24BA /* dog.jpg */; };
-		7F30C09826E17C760001506F /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F30C09726E17C760001506F /* Mems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +49,6 @@
 		7F2CDF3F269F22E500DB24BA /* OpenGLESImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGLESImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2CDF43269F22E500DB24BA /* OpenGLESImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGLESImageUITests.swift; sourceTree = "<group>"; };
 		7F2CDF45269F22E500DB24BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F2CDF53269F310400DB24BA /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
-		7F30C09726E17C760001506F /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +99,6 @@
 		7F2CDF20269F22E100DB24BA /* OpenGLESImage */ = {
 			isa = PBXGroup;
 			children = (
-				7F30C09726E17C760001506F /* Mems.swift */,
-				7F2CDF53269F310400DB24BA /* dog.jpg */,
 				7F2CDF21269F22E100DB24BA /* AppDelegate.swift */,
 				7F2CDF23269F22E100DB24BA /* SceneDelegate.swift */,
 				7F2CDF25269F22E100DB24BA /* ViewController.swift */,
@@ -237,7 +231,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F2CDF54269F310400DB24BA /* dog.jpg in Resources */,
 				7F2CDF2E269F22E400DB24BA /* LaunchScreen.storyboard in Resources */,
 				7F2CDF2B269F22E400DB24BA /* Assets.xcassets in Resources */,
 				7F2CDF29269F22E100DB24BA /* Main.storyboard in Resources */,
@@ -268,7 +261,6 @@
 				7F2CDF26269F22E100DB24BA /* ViewController.swift in Sources */,
 				7F2CDF22269F22E100DB24BA /* AppDelegate.swift in Sources */,
 				7F2CDF24269F22E100DB24BA /* SceneDelegate.swift in Sources */,
-				7F30C09826E17C760001506F /* Mems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

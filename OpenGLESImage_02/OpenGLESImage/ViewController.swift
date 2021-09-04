@@ -10,16 +10,16 @@ import OpenGLES
 import UIKit
 
 struct GLVertex {
-    let postionCoord: GLKVector3!
-    let textureCoord: GLKVector2!
-    let normal: GLKVector3!
+    let postionCoord: GLKVector3
+    let textureCoord: GLKVector2
+    let normal: GLKVector3
 }
 
 class ViewController: UIViewController, GLKViewDelegate {
     var baseEffect: GLKBaseEffect!
     
-    lazy var vertices: UnsafeMutablePointer<GLVertex>! = {
-        let verticesSize = MemoryLayout<GLVertex>.stride * kCoordCount
+    var vertices: UnsafeMutablePointer<GLVertex> = {
+        let verticesSize = MemoryLayout<GLVertex>.stride * 36
         let vertices = UnsafeMutablePointer<GLVertex>.allocate(capacity: verticesSize)
         return vertices
     }()
@@ -209,6 +209,22 @@ class ViewController: UIViewController, GLKViewDelegate {
         
         glEnableVertexAttribArray(GLuint.init(GLKVertexAttrib.position.rawValue))
         let n = MemoryLayout<GLVertex>.stride
+//        print("-----GLVertex----")
+//        print(MemoryLayout<GLVertex>.size)
+//        print(n)
+//        print(MemoryLayout<GLVertex>.alignment)
+//        print("-----GLVertex----")
+//        print("-----GLKVector3----")
+//        print(MemoryLayout<GLKVector3>.size)
+//        print(MemoryLayout<GLKVector3>.stride)
+//        print(MemoryLayout<GLKVector3>.alignment)
+//        print("-----GLKVector3----")
+//        print("-----GLKVector2----")
+//        print(MemoryLayout<GLKVector2>.size)
+//        print(MemoryLayout<GLKVector2>.stride)
+//        print(MemoryLayout<GLKVector2>.alignment)
+//        print("-----GLKVector2----")
+        
         glVertexAttribPointer(GLuint(GLKVertexAttrib.position.rawValue), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE),GLsizei(n),UnsafeMutableRawPointer(bitPattern: 0))
         
         glEnableVertexAttribArray(GLuint.init(GLKVertexAttrib.texCoord0.rawValue))
@@ -216,7 +232,7 @@ class ViewController: UIViewController, GLKViewDelegate {
         glVertexAttribPointer(GLuint.init(GLKVertexAttrib.texCoord0.rawValue), 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(n), UnsafeMutableRawPointer(bitPattern: MemoryLayout<GLKVector3>.stride + 4))
         
         glEnableVertexAttribArray(GLuint.init(GLKVertexAttrib.normal.rawValue))
-        glVertexAttribPointer(GLuint.init(GLKVertexAttrib.normal.rawValue), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE),GLsizei(n),UnsafeMutablePointer(bitPattern: MemoryLayout<GLKVector3>.stride + MemoryLayout<GLKVector2>.stride + 8))
+        glVertexAttribPointer(GLuint.init(GLKVertexAttrib.normal.rawValue), 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE),GLsizei(n),UnsafeMutablePointer(bitPattern: MemoryLayout<GLKVector3>.stride + 4 + MemoryLayout<GLKVector2>.stride))
     }
     
     func addCADisplayLink() {
@@ -225,7 +241,7 @@ class ViewController: UIViewController, GLKViewDelegate {
     }
     
     @objc func onActionLink() {
-        self.angle = (self.angle + 10).truncatingRemainder(dividingBy: 360)
+        self.angle = (self.angle + 8).truncatingRemainder(dividingBy: 360)
         self.baseEffect.transform.modelviewMatrix = GLKMatrix4MakeRotation(GLKMathDegreesToRadians(Float(self.angle)), 0.3, 1, 0.7)
         self.glView.display()
     }
